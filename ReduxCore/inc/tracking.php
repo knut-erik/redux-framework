@@ -18,7 +18,7 @@
         /**
          * Class Redux_Tracking
          */
-        class Redux_Tracking {
+        #[AllowDynamicProperties] class Redux_Tracking {
 
             public $options = array();
             public $parent;

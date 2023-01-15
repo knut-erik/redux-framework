@@ -6,7 +6,7 @@
     }
 
     if ( ! class_exists( 'Redux_Filesystem' ) ) {
-        class Redux_Filesystem {
+        #[AllowDynamicProperties] class Redux_Filesystem {
 
             /**
              * Instance of this class.

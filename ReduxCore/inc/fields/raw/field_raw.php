@@ -6,7 +6,7 @@
     }
 
     if ( ! class_exists( 'ReduxFramework_raw' ) ) {
-        class ReduxFramework_raw {
+        #[AllowDynamicProperties] class ReduxFramework_raw {
 
             /**
              * Field Constructor.
@@ -14,7 +14,9 @@
              *
              * @since ReduxFramework 3.0.4
              */
-            function __construct( $field = array(), $value = '', $parent ) {
+            function __construct( $field , $value , $parent ) {
+                empty($field) ?? $field = array();
+                empty($value) ?? $value = '';
                 $this->parent = $parent;
                 $this->field  = $field;
                 $this->value  = $value;

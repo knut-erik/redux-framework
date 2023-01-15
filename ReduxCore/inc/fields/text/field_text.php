@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_text' ) ) {
-    class ReduxFramework_text {
+    #[AllowDynamicProperties] class ReduxFramework_text {
 
         /**
          * Field Constructor.
@@ -14,7 +14,9 @@ if ( ! class_exists( 'ReduxFramework_text' ) ) {
          *
          * @since ReduxFramework 1.0.0
          */
-        function __construct( $field = array(), $value = '', $parent ) {
+        function __construct( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             $this->parent = $parent;
             $this->field  = $field;
             $this->value  = $value;

@@ -10,7 +10,7 @@
     }
 
     if ( ! class_exists( 'ReduxFramework_password' ) ) {
-        class ReduxFramework_password {
+        #[AllowDynamicProperties] class ReduxFramework_password {
 
             /**
              * Field Constructor.
@@ -18,7 +18,9 @@
              *
              * @since ReduxFramework 1.0.1
              */
-            function __construct( $field = array(), $value = '', $parent ) {
+            function __construct( $field , $value , $parent ) {
+                empty($field) ?? $field = array();
+                empty($value) ?? $value = '';
                 $this->parent = $parent;
                 $this->field  = $field;
                 $this->value  = $value;

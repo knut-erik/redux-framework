@@ -31,7 +31,7 @@
          *
          * @since       1.0.0
          */
-        class ReduxFramework_color_rgba {
+        #[AllowDynamicProperties] class ReduxFramework_color_rgba {
 
             /**
              * Class Constructor. Defines the args for the extions class
@@ -45,8 +45,9 @@
              *
              * @return      void
              */
-            public function __construct( $field = array(), $value = '', $parent ) {
-
+            public function __construct( $field , $value , $parent ) {
+                empty($field) ?? $field = array();
+                empty($value) ?? $value = '';
                 // Set required variables
                 $this->parent = $parent;
                 $this->field  = (array) $field;

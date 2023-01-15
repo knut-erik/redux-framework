@@ -31,7 +31,7 @@
          *
          * @since       3.1.6
          */
-        class ReduxFramework_Extension_options_object {
+        #[AllowDynamicProperties] class ReduxFramework_Extension_options_object {
 
             // Protected vars
             protected $parent;

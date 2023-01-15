@@ -31,7 +31,7 @@
          *
          * @since       1.0.0
          */
-        class ReduxFramework_extension_customizer {
+        #[AllowDynamicProperties] class ReduxFramework_extension_customizer {
 
             // Protected vars
             protected $redux;
@@ -580,8 +580,9 @@
 
             }
 
-            public function add_section( $id, $args = array(), $wp_customize ) {
+            public function add_section( $id, $args , $wp_customize ) {
 
+                empty($args) ?? $args = array();
                 if ( is_a( $id, 'WP_Customize_Section' ) ) {
                     $section = $id;
                 } else {
@@ -603,7 +604,9 @@
              * @param WP_Customize_Panel|string $id   Customize Panel object, or Panel ID.
              * @param array                     $args Optional. Panel arguments. Default empty array.
              */
-            public function add_panel( $id, $args = array(), $wp_customize ) {
+            public function add_panel( $id, $args , $wp_customize ) {
+
+                empty($args) ?? $args = array();
                 if ( is_a( $id, 'WP_Customize_Panel' ) ) {
                     $panel = $id;
                 } else {

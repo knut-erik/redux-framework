@@ -31,7 +31,7 @@ if ( !class_exists ( 'ReduxFramework_checkbox' ) ) {
      *
      * @since       1.0.0
      */
-    class ReduxFramework_checkbox {
+    #[AllowDynamicProperties] class ReduxFramework_checkbox {
 
         /**
          * Field Constructor.
@@ -41,8 +41,9 @@ if ( !class_exists ( 'ReduxFramework_checkbox' ) ) {
          * @access      public
          * @return      void
          */
-        function __construct ( $field = array(), $value = '', $parent ) {
-
+        function __construct ( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             $this->parent = $parent;
             $this->field = $field;
             $this->value = $value;

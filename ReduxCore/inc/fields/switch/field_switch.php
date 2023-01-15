@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_switch' ) ) {
-    class ReduxFramework_switch {
+    #[AllowDynamicProperties] class ReduxFramework_switch {
 
         /**
          * Field Constructor.
@@ -14,7 +14,10 @@ if ( ! class_exists( 'ReduxFramework_switch' ) ) {
          *
          * @since ReduxFramework 0.0.4
          */
-        function __construct( $field = array(), $value = '', $parent ) {
+        function __construct( $field , $value, $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = array();
+
             $this->parent = $parent;
             $this->field  = $field;
             $this->value  = $value;

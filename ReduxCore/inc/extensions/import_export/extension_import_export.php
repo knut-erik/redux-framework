@@ -31,7 +31,7 @@
          *
          * @since       3.1.6
          */
-        class ReduxFramework_extension_import_export {
+        #[AllowDynamicProperties] class ReduxFramework_extension_import_export {
 
             // Protected vars
             protected $parent;

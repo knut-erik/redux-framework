@@ -8,7 +8,7 @@
      * @package     Redux_Framework
      * @subpackage  Core
      */
-    class ReduxFrameworkInstances {
+#[AllowDynamicProperties] class ReduxFrameworkInstances {
 
         /**
          * ReduxFrameworkInstances

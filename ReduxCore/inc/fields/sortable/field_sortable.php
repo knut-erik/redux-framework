@@ -6,7 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_sortable' ) ) {
-    class ReduxFramework_sortable {
+
+    #[AllowDynamicProperties] class ReduxFramework_sortable {
 
         /**
          * Field Constructor.
@@ -14,7 +15,9 @@ if ( ! class_exists( 'ReduxFramework_sortable' ) ) {
          *
          * @since Redux_Options 2.0.1
          */
-        function __construct( $field = array(), $value = '', $parent ) {
+        function __construct( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             $this->parent = $parent;
             $this->field  = $field;
             $this->value  = $value;

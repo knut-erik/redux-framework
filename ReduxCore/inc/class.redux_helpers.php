@@ -14,7 +14,7 @@ if ( ! class_exists( 'Redux_Helpers' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
-	class Redux_Helpers {
+    #[AllowDynamicProperties] class Redux_Helpers {
 
 		public static function tabFromField( $parent, $field ) {
 			foreach ( $parent->sections as $k => $section ) {

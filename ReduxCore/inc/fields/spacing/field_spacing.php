@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_spacing' ) ) {
-    class ReduxFramework_spacing {
+    #[AllowDynamicProperties] class ReduxFramework_spacing {
 
         /**
          * Field Constructor.
@@ -14,7 +14,9 @@ if ( ! class_exists( 'ReduxFramework_spacing' ) ) {
          *
          * @since ReduxFramework 1.0.0
          */
-        function __construct( $field = array(), $value = '', $parent ) {
+        function __construct( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             $this->parent = $parent;
             $this->field  = $field;
             $this->value  = $value;

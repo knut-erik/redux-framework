@@ -63,7 +63,7 @@
          *
          * @since       1.0.0
          */
-        class ReduxFramework {
+        #[AllowDynamicProperties] class ReduxFramework {
 
             // ATTENTION DEVS
             // Please update the build number with each push, no matter how small.

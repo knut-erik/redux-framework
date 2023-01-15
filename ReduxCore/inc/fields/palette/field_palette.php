@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_palette' ) ) {
-    class ReduxFramework_palette {
+    #[AllowDynamicProperties] class ReduxFramework_palette {
 
         /**
          * Field Constructor.
@@ -34,7 +34,9 @@ if ( ! class_exists( 'ReduxFramework_palette' ) ) {
          * @access      public
          * @return      void
          */
-        function __construct( $field = array(), $value = '', $parent ) {
+        function __construct( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             $this->parent = $parent;
             $this->field  = $field;
             $this->value  = $value;

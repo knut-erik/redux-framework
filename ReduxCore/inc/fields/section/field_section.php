@@ -30,7 +30,7 @@
          *
          * @since       1.0.0
          */
-        class ReduxFramework_section {
+        #[AllowDynamicProperties] class ReduxFramework_section {
 
             /**
              * Field Constructor.
@@ -40,7 +40,9 @@
              * @access        public
              * @return        void
              */
-            public function __construct( $field = array(), $value = '', $parent ) {
+            function __construct( $field , $value , $parent ) {
+                empty($field) ?? $field = array();
+                empty($value) ?? $value = '';
                 $this->parent = $parent;
                 $this->field  = $field;
                 $this->value  = $value;

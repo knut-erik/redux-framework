@@ -21,7 +21,7 @@
          *
          * @since       1.0.0
          */
-        class Redux_Functions {
+        #[AllowDynamicProperties] class Redux_Functions {
 
             static public $_parent;
 

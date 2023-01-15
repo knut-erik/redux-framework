@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_slider' ) ) {
-    class ReduxFramework_slider {
+    #[AllowDynamicProperties] class ReduxFramework_slider {
 
         /**
          * Field Constructor.
@@ -37,8 +37,9 @@ if ( ! class_exists( 'ReduxFramework_slider' ) ) {
         private $display_text = 2;
         private $display_select = 3;
 
-        function __construct( $field = array(), $value = '', $parent ) {
-
+        function __construct( $field , $value , $parent ) {
+            empty($field) ?? $field = array();
+            empty($value) ?? $value = '';
             //parent::__construct( $parent->sections, $parent->args );
             $this->parent = $parent;
             $this->field  = $field;

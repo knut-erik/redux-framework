@@ -6,7 +6,8 @@
     }
 
     if ( ! class_exists( 'ReduxFramework_sorter' ) ) {
-        class ReduxFramework_sorter {
+
+        #[AllowDynamicProperties] class ReduxFramework_sorter {
 
             /**
              * Field Constructor.
@@ -14,7 +15,9 @@
              *
              * @since Redux_Options 1.0.0
              */
-            function __construct( $field = array(), $value = '', $parent ) {
+            function __construct( $field , $value , $parent ) {
+                empty($field) ?? $field = array();
+                empty($value) ?? $value = '';
                 $this->parent = $parent;
                 $this->field  = $field;
                 $this->value  = $value;
