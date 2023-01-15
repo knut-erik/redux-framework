@@ -15,21 +15,25 @@
          *
          * @var object
          */
-        private static $instance;
+        private static object $instance;
 
         /**
          * ReduxFramework instances
          *
          * @var array
          */
-        private static $instances;
+        private static array $instances;
 
         
         /**
          * @var array
          */
-        private $options = array();        
-        
+        private array $options = array();
+
+        public function get_options(): array {
+            return $this->options;
+        }
+
         /**
          * Get Instance
          * Get ReduxFrameworkInstances instance
@@ -39,9 +43,9 @@
          *
          * @return object                class instance
          */
-        public static function get_instance( $opt_name = false ) {
+        public static function get_instance( string $opt_name) : object  {
 
-            if ( is_null( self::$instance ) ) {
+            if ( empty($opt_name) || is_null( self::$instance ) ) {
                 self::$instance = new self();
             }
 
@@ -62,6 +66,7 @@
         }
 
         private function __construct() {
+
 
             add_action( 'redux/construct', array( $this, 'capture' ), 5, 1 );
 

@@ -2852,9 +2852,9 @@
 
                             $return_array = array(
                                 'status'   => 'success',
-                                'options'  => $redux->options,
-                                'errors'   => isset ( $redux->localize_data['errors'] ) ? $redux->localize_data['errors'] : null,
-                                'warnings' => isset ( $redux->localize_data['warnings'] ) ? $redux->localize_data['warnings'] : null,
+                                'options'  => $redux->get_options(),
+                                'errors'   => $redux->localize_data['errors'] ?? null,
+                                'warnings' => $redux->localize_data['warnings'] ?? null,
                             );
 
                         } catch ( Exception $e ) {
