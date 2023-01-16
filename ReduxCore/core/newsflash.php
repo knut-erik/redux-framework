@@ -64,9 +64,9 @@
                         if ( ! empty( $this->notice_data ) ) {
                             if ( strcmp( $data, $this->notice_data ) == 0 ) {
                                 // set new cookie for interval value
-                                Redux_Functions::setCookie( $this->cookie_id, time(), time() + ( 86400 * $this->interval ), '/' );
-
+                                Redux_Functions::setCookie( $this->cookie_id, time(), time() + ( 86400 * $this->interval ), '/','',false,false );
                                 // bail out
+                                //TODO: Jeg er usikker på hvorfor den bailer ut her
                                 return;
                             }
                         }
